@@ -68,14 +68,14 @@ input[type=text], input[type=email], textarea {
   overflow: hidden;
 }
 
-.logo img {
+.logo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
 
-.logo:hover img {
+.logo:hover {
   transform: scale(1.2);
 }
 
