@@ -1,0 +1,38 @@
+body{
+       background-color: #ffffff; /* For white background color */
+    } 
+
+p{
+   font-size:16px;      /* sets thte font size */
+   line-height:1.5;     /* sets the line height */
+   margin-bottom:1em;   /* add some space after the paragraph */
+   color:#333;          /* sets the text color */
+ }
+
+h1{
+        font-size:36px;
+        font-weight:bold;
+        margin-top:40px;
+        margin-bottom:20px;
+        color:#333
+ }
+
+
+.typed {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333333;
+  display: inline-block;
+}
+
+/* Typing animation */
+.typed::after {
+  content: attr(data-typed-items);
+  animation: typing 3s steps(50) forwards;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
