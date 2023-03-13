@@ -79,4 +79,18 @@ input[type=text], input[type=email], textarea {
   transform: scale(1.2);
 }
 
-  
+ .typing-text {
+  display: inline-block;
+  overflow: hidden;
+  animation: typing 2s steps(16) 1s forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
