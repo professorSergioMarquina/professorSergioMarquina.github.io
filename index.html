@@ -1,28 +1,287 @@
-<!DOCTYPE html>
+<!-- Binnned by Ashik Muhsmmed -->
+
 <html>
-  <head>
-    <title>My Personal Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="p/About.html">About</a>
-      <a href="p/prayaga.html">Projects</a>
-      <a href="p/skill.html">Skills</a>
-      <a href="p/contact.html">Contact</a>
-    </nav>
-  
-    <header>
-      <div class="container">
-            <ul class="logo">
-                <li><a href=""><h1>ProfessorSergioMarquina</h1><img src="https://te.legra.ph/file/dc29270c160760a32d434.jpg" alt="logo"></a></li>
-            </ul>
-      <h1>Hello I am professorSergioMarquina</h1>
-      <p>This is My Sample Website for mine Project Work Please Support me if you can.</p>
-        </div>
-      <div class="typing-text">Hello, world!, Yellow is a color that is often associated with sunshine, happiness, and optimism. It is a bright and cheerful color that is often used to grab people's attention. Yellow can also be associated with caution, as in yellow caution signs or yellow traffic lights </div>
-    </header>
-    </body>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+	</head>
+
+	<body>
+
+		<script>
+
+			function display() {
+
+				n1 = document.getElementById("yes");
+
+				n1.value = (1 / n1.value);
+
+			}
+
+
+
+			function changesin() {
+
+				n1 = document.getElementById("yes");
+
+				n1.value = (n1.value * -1);
+
+			}
+
+
+
+			function percentage() {
+
+				n1 = document.getElementById("yes").value;
+
+				document.getElementById("yes").value = (n1 / 100);
+
+			}
+
+
+
+			function square() {
+
+				var a = parseInt(document.getElementById("yes").value);
+
+				document.getElementById("yes").value = Math.pow(a, 2);
+
+			}
+
+
+
+			function backspace() {
+
+				t1 = document.getElementById("yes");
+
+
+
+				n1 = t1.value;
+
+				n2 = n1.length - 1;
+
+				t1.value = n1.substr(0, n2);
+
+			}
+
+
+
+			function numberadd(x) {
+
+				t1 = document.getElementById("yes");
+
+				t1.value = t1.value + x;
+
+			}
+
+
+
+			function cleartext() {
+
+				document.getElementById("yes").value = "";
+
+			}
+
+
+
+			function res() {
+
+				document.getElementById("yes").value = eval(document.getElementById("yes").value);
+
+			}
+
+
+
+			function squareroot() {
+
+				document.getElementById("yes").value = Math.sqrt(parseInt(document.getElementById("yes").value));
+
+			}
+
+		</script>
+
+		<table border="4">
+
+			<tr>
+
+				<td colspan="4">
+
+					<input type="text" id="yes">
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td>
+
+					<button id="pe" onclick="percentage()">%</button>
+
+				</td>
+
+				<td>
+
+					<button id="ce" onclick="cleartext()">CE</button>
+
+				</td>
+
+				<td>
+
+					<button id="c" onclick="cleartext()">C</button>
+
+				</td>
+
+				<td>
+
+					<button id="bs" onclick="backspace()">🔙</button>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td>
+
+					<button id="onebyx" onclick="display()"><sup>1</sup>/<sub>x</sub></button>
+
+				</td>
+
+				<td>
+
+					<button id="xsquare" onclick="square()">x<sup>2</sup></button>
+
+				</td>
+
+			<td>
+
+			<button id="squareroot" onclick="squareroot()">SQRT</button>
+
+			</td>
+
+			<td>
+
+				<button id="division" onclick="numberadd('/')">/</button>
+
+			</td>
+
+			</tr>
+
+			<tr>
+
+			<td>
+
+				<button id="seven" onclick="numberadd(7)">7</button>
+
+			</td>
+
+			<td>
+
+				<button id="eight" onclick="numberadd(8)">8</button>
+
+			</td>
+
+			<td>
+
+				<button id="nine" onclick="numberadd(9)">9</button>
+
+			</td>
+
+			<td>
+
+				<button id="multiple" onclick="numberadd('*')">*</button>
+
+			</td>
+
+			</tr>
+
+			<td>
+
+				<button id="four" onclick="numberadd(4)">4</button>
+
+			</td>
+
+			<td>
+
+				<button id="five" onclick="numberadd(5)">5</button>
+
+			</td>
+
+			<td>
+
+				<button id="six" onclick="numberadd(6)">6</button>
+
+			</td>
+
+			<td>
+
+				<button id="subtraction" onclick="numberadd('-')">-</button>
+
+			</td>
+
+			</tr>
+
+			<tr>
+
+			<td>
+
+				<button id="one" onclick="numberadd(1)">1</button>
+
+			</td>
+
+			<td>
+
+				<button id="two" onclick="numberadd(2)">2</button>
+
+			</td>
+
+			<td>
+
+				<button id="three" onclick="numberadd(3)">3</button>
+
+			</td>
+
+			<td>
+
+				<button id="addition" onclick="numberadd('+')">+</button>
+
+			</td>
+
+			</tr>
+
+			<tr>
+
+			<td>
+
+				<button id="plusmin" onclick="changesin()"><sup>+</sup>/<sub>-</sub></button>
+
+			</td>
+
+			<td>
+
+				<button id="zero" onclick="numberadd(0)">0</button>
+
+			</td>
+
+			<td>
+
+				<button id="decm" onclick="numberadd('.')">.</button>
+
+			</td>
+
+			<td>
+
+				<button id="isequal" onclick="res()">=</button>
+
+			</td>
+
+			</tr>
+
+		</table>
+
+	</body>
+
 </html>
