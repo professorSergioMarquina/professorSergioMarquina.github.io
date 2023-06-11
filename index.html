@@ -1,287 +1,52 @@
-<!-- Binnned by Ashik Muhsmmed -->
-
+<!DOCTYPE html>
 <html>
-
-	<head>
-
-		<link rel="stylesheet" type="text/css" href="style.css">
-
-	</head>
-
-	<body>
-
-		<script>
-
-			function display() {
-
-				n1 = document.getElementById("yes");
-
-				n1.value = (1 / n1.value);
-
-			}
-
-
-
-			function changesin() {
-
-				n1 = document.getElementById("yes");
-
-				n1.value = (n1.value * -1);
-
-			}
-
-
-
-			function percentage() {
-
-				n1 = document.getElementById("yes").value;
-
-				document.getElementById("yes").value = (n1 / 100);
-
-			}
-
-
-
-			function square() {
-
-				var a = parseInt(document.getElementById("yes").value);
-
-				document.getElementById("yes").value = Math.pow(a, 2);
-
-			}
-
-
-
-			function backspace() {
-
-				t1 = document.getElementById("yes");
-
-
-
-				n1 = t1.value;
-
-				n2 = n1.length - 1;
-
-				t1.value = n1.substr(0, n2);
-
-			}
-
-
-
-			function numberadd(x) {
-
-				t1 = document.getElementById("yes");
-
-				t1.value = t1.value + x;
-
-			}
-
-
-
-			function cleartext() {
-
-				document.getElementById("yes").value = "";
-
-			}
-
-
-
-			function res() {
-
-				document.getElementById("yes").value = eval(document.getElementById("yes").value);
-
-			}
-
-
-
-			function squareroot() {
-
-				document.getElementById("yes").value = Math.sqrt(parseInt(document.getElementById("yes").value));
-
-			}
-
-		</script>
-
-		<table border="4">
-
-			<tr>
-
-				<td colspan="4">
-
-					<input type="text" id="yes">
-
-				</td>
-
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<table border="4">
+		<tr>
+			<td colspan="4">
+				<input type="text" id="result">
+			</td>
+		</tr>
+		<tr>
+			<td><button class="operator" id="percentage">%</button></td>
+			<td><button class="clear" id="ce">CE</button></td>
+			<td><button class="clear" id="c">C</button></td>
+			<td><button class="backspace" id="bs">🔙</button></td>
+		</tr>
+		<tr>
+			<td><button class="function" id="onebyx"><sup>1</sup>/<sub>x</sub></button></td>
+			<td><button class="function" id="xsquare">x<sup>2</sup></button></td>
+			<td><button class="function" id="squareroot">SQRT</button></td>
+			<td><button class="operator" id="division">/</button></td>
 			</tr>
-
-			<tr>
-
-				<td>
-
-					<button id="pe" onclick="percentage()">%</button>
-
-				</td>
-
-				<td>
-
-					<button id="ce" onclick="cleartext()">CE</button>
-
-				</td>
-
-				<td>
-
-					<button id="c" onclick="cleartext()">C</button>
-
-				</td>
-
-				<td>
-
-					<button id="bs" onclick="backspace()">🔙</button>
-
-				</td>
-
-			</tr>
-
-			<tr>
-
-				<td>
-
-					<button id="onebyx" onclick="display()"><sup>1</sup>/<sub>x</sub></button>
-
-				</td>
-
-				<td>
-
-					<button id="xsquare" onclick="square()">x<sup>2</sup></button>
-
-				</td>
-
-			<td>
-
-			<button id="squareroot" onclick="squareroot()">SQRT</button>
-
-			</td>
-
-			<td>
-
-				<button id="division" onclick="numberadd('/')">/</button>
-
-			</td>
-
-			</tr>
-
-			<tr>
-
-			<td>
-
-				<button id="seven" onclick="numberadd(7)">7</button>
-
-			</td>
-
-			<td>
-
-				<button id="eight" onclick="numberadd(8)">8</button>
-
-			</td>
-
-			<td>
-
-				<button id="nine" onclick="numberadd(9)">9</button>
-
-			</td>
-
-			<td>
-
-				<button id="multiple" onclick="numberadd('*')">*</button>
-
-			</td>
-
-			</tr>
-
-			<td>
-
-				<button id="four" onclick="numberadd(4)">4</button>
-
-			</td>
-
-			<td>
-
-				<button id="five" onclick="numberadd(5)">5</button>
-
-			</td>
-
-			<td>
-
-				<button id="six" onclick="numberadd(6)">6</button>
-
-			</td>
-
-			<td>
-
-				<button id="subtraction" onclick="numberadd('-')">-</button>
-
-			</td>
-
-			</tr>
-
-			<tr>
-
-			<td>
-
-				<button id="one" onclick="numberadd(1)">1</button>
-
-			</td>
-
-			<td>
-
-				<button id="two" onclick="numberadd(2)">2</button>
-
-			</td>
-
-			<td>
-
-				<button id="three" onclick="numberadd(3)">3</button>
-
-			</td>
-
-			<td>
-
-				<button id="addition" onclick="numberadd('+')">+</button>
-
-			</td>
-
-			</tr>
-
-			<tr>
-
-			<td>
-
-				<button id="plusmin" onclick="changesin()"><sup>+</sup>/<sub>-</sub></button>
-
-			</td>
-
-			<td>
-
-				<button id="zero" onclick="numberadd(0)">0</button>
-
-			</td>
-
-			<td>
-
-				<button id="decm" onclick="numberadd('.')">.</button>
-
-			</td>
-
-			<td>
-
-				<button id="isequal" onclick="res()">=</button>
-
-			</td>
-
-			</tr>
-
-		</table>
-
-	</body>
-
+		<tr>
+			<td><button class="number" id="seven">7</button></td>
+			<td><button class="number" id="eight">8</button></td>
+			<td><button class="number" id="nine">9</button></td>
+			<td><button class="operator" id="multiply">*</button></td>
+		</tr>
+		<tr>
+			<td><button class="number" id="four">4</button></td>
+			<td><button class="number" id="five">5</button></td>
+			<td><button class="number" id="six">6</button></td>
+			<td><button class="operator" id="subtraction">-</button></td>
+		</tr>
+		<tr>
+			<td><button class="number" id="one">1</button></td>
+			<td><button class="number" id="two">2</button></td>
+			<td><button class="number" id="three">3</button></td>
+			<td><button class="operator" id="addition">+</button></td>
+		</tr>
+		<tr>
+			<td><button class="toggle-sign" id="plusmin"><sup>+</sup>/<sub>-</sub></button></td>
+			<td><button class="number" id="zero">0</button></td>
+			<td><button class="decimal" id="decm">.</button></td>
+			<td><button class="equal" id="isequal">=</button></td>
+		</tr>
+	</table>
+</body>
 </html>
