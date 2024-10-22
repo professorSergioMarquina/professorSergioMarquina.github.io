@@ -1,100 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphic Designer Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <!-- Navbar -->
-    <nav class="bg-white p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-800">My Portfolio</h1>
-            <ul class="flex space-x-4">
-                <li><a href="#about" class="text-gray-600 hover:text-gray-900">About</a></li>
-                <li><a href="#portfolio" class="text-gray-600 hover:text-gray-900">Portfolio</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a></li>
-            </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="container my-5">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="display-4">My Portfolio</h1>
+        <p>Check out my recent projects below.</p>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Add your portfolio items here -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="project1.jpg" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Project 1</h5>
+            <p class="card-text">Description of project 1.</p>
+          </div>
         </div>
-    </nav>
+      </div>
+      <!-- Repeat for more projects -->
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="bg-gray-800 text-white py-20 text-center">
-        <h2 class="text-4xl font-bold mb-4">Hello, I'm a Graphic Designer</h2>
-        <p class="text-lg">I create stunning visuals and designs to bring your ideas to life.</p>
-        <button class="mt-6 bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition">View My Work</button>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white text-gray-800">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4">About Me</h2>
-            <p class="text-lg">I'm a passionate graphic designer with over 5 years of experience in creating beautiful and functional designs. My expertise includes logo design, branding, web design, and illustration.</p>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-10">My Portfolio</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Portfolio Item 1 -->
-                <div class="bg-white shadow-lg rounded overflow-hidden">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 1" class="w-full">
-                    <div class="p-4">
-                        <h3 class="text-lg font-bold mb-2">Project 1</h3>
-                        <p class="text-gray-600">This is a description of the project.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 2 -->
-                <div class="bg-white shadow-lg rounded overflow-hidden">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 2" class="w-full">
-                    <div class="p-4">
-                        <h3 class="text-lg font-bold mb-2">Project 2</h3>
-                        <p class="text-gray-600">This is a description of the project.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 3 -->
-                <div class="bg-white shadow-lg rounded overflow-hidden">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 3" class="w-full">
-                    <div class="p-4">
-                        <h3 class="text-lg font-bold mb-2">Project 3</h3>
-                        <p class="text-gray-600">This is a description of the project.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white text-gray-800">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-6">Contact Me</h2>
-            <form id="contactForm" class="max-w-md mx-auto bg-gray-100 p-6 rounded shadow-md">
-                <div class="mb-4">
-                    <label for="name" class="block text-sm font-semibold mb-2">Name</label>
-                    <input type="text" id="name" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-sm font-semibold mb-2">Email</label>
-                    <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500" required>
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block text-sm font-semibold mb-2">Message</label>
-                    <textarea id="message" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4 text-center">
-        <p>&copy; 2024 Graphic Designer Portfolio. All rights reserved.</p>
-    </footer>
-
-    <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
