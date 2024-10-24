@@ -1,74 +1,103 @@
-/* styles.css */
+*styles.css*
+```
+/* Global Styles */
 
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #333;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar Styles */
+
 .navbar {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .navbar-brand {
-    font-weight: 600;
+  font-weight: 600;
+  color: #00698f;
 }
 
 .nav-link {
-    font-weight: 500;
+  color: #333;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-    color: #007bff;
+  color: #00698f;
 }
 
-/* Portfolio Section */
+/* Portfolio Section Styles */
+
 #portfolio {
-    margin-top: 60px;
+  background-color: #fff;
+  padding: 50px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Card Styles */
+.display-4 {
+  font-weight: 600;
+  color: #00698f;
+}
+
 .card {
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
-    object-fit: cover;
-    height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-/* Footer */
+.card-title {
+  font-weight: 600;
+  color: #00698f;
+}
+
+/* Footer Styles */
+
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #f8f9fa;
-    border-top: 1px solid #e9ecef;
-    margin-top: 40px;
-    font-size: 14px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-/* Footer Links */
 footer a {
-    color: #007bff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  color: #00698f;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 576px) {
-    #portfolio h1 {
-        font-size: 2rem;
-    }
+/* Responsive Design */
 
-    footer {
-        font-size: 12px;
-    }
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+  }
 }
+
+@media (max-width: 480px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+```
