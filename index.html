@@ -120,15 +120,21 @@
       // Check for iOS devices
       const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
 
+      // Check for Android devices
+      const isAndroid = /android/i.test(userAgent);
+
       if (isIOS) {
         // Apply iOS styles
         body.classList.add('ios');
-      } else if (width < 768) {
-        // Apply mobile styles for Android and other mobile devices
+      } else if (isAndroid) {
+        // Force mobile styles even if the browser requests desktop mode
         body.classList.add('mobile');
-      } else {
-        // Apply desktop styles for Windows/macOS
+      } else if (width >= 768) {
+        // Apply desktop styles for Windows/macOS when viewport is large
         body.classList.add('desktop');
+      } else {
+        // Fallback to mobile styles
+        body.classList.add('mobile');
       }
     }
 
