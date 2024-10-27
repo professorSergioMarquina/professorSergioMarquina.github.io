@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -7,14 +8,46 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Mobile specific styles */
+    body.mobile {
+      font-size: 16px;
+      background-color: lightblue;
+    }
+
+    /* Desktop (Windows/macOS) styles */
+    body.desktop {
+      font-size: 24px;
+      background-color: lightgreen;
+    }
+
+    /* iOS specific styles */
+    body.ios {
+      font-size: 16px;
+      background-color: lightcoral;
+    }
+
+    /* Navbar styling for all devices */
+    .navbar-brand {
+      font-weight: 600;
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">My Portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -46,7 +79,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">About Me</h5>
-            <p class="card-text">Hello! I'm [Your Name], a passionate graphic designer and tech enthusiast. I specialize in creating visually captivating designs with a strong focus on user experience.</p>
+            <p class="card-text">Hello! I'm Ashik Muhammed, a passionate graphic designer and tech enthusiast. I specialize in creating visually captivating designs with a strong focus on user experience.</p>
           </div>
         </div>
       </div>
@@ -68,9 +101,43 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2024 Your Name. All Rights Reserved. | <a href="https://www.linkedin.com/in/yourname">LinkedIn</a></p>
+    <p>© 2024 Ashik Muhammed. All Rights Reserved. | <a href="https://www.linkedin.com/in/ashikmuhammed">LinkedIn</a></p>
   </footer>
 
+  <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script for Device Detection and Styling -->
+  <script>
+    function detectDeviceAndApplyStyles() {
+      const width = window.innerWidth;
+      const body = document.body;
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Remove all classes
+      body.classList.remove('mobile', 'desktop', 'ios');
+
+      // Check for iOS devices
+      const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+
+      if (isIOS) {
+        // Apply iOS styles
+        body.classList.add('ios');
+      } else if (width < 768) {
+        // Apply mobile styles for Android and other mobile devices
+        body.classList.add('mobile');
+      } else {
+        // Apply desktop styles for Windows/macOS
+        body.classList.add('desktop');
+      }
+    }
+
+    // Run on page load
+    detectDeviceAndApplyStyles();
+
+    // Re-run on window resize
+    window.addEventListener('resize', detectDeviceAndApplyStyles);
+  </script>
 </body>
+
 </html>
