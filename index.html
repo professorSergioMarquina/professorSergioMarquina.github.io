@@ -37,6 +37,20 @@
     .navbar-brand {
       font-weight: 600;
     }
+
+    /* Footer styling */
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .footer-icons img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -99,9 +113,13 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer with Social Icons -->
   <footer>
-    <p>© 2024 Ashik Muhammed. All Rights Reserved. | <a href="https://www.linkedin.com/in/ashikmuhammed">LinkedIn</a></p>
+    <div class="footer-icons">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" id="linkedin">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" id="instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" id="twitter">
+    </div>
   </footer>
 
   <!-- Bootstrap JavaScript -->
@@ -143,7 +161,32 @@
 
     // Re-run on window resize
     window.addEventListener('resize', detectDeviceAndApplyStyles);
+
+    // Script for checking social media links
+    const socialMediaIcons = document.querySelectorAll('.footer-icons img');
+
+    socialMediaIcons.forEach(icon => {
+      icon.addEventListener('click', (event) => {
+        const id = event.target.id;
+        let url = '';
+
+        if (id === 'linkedin') {
+          url = 'https://www.linkedin.com/in/ashikmuhammed';
+        } else if (id === 'instagram') {
+          url = ''; // No link available
+        } else if (id === 'twitter') {
+          url = ''; // No link available
+        }
+
+        if (url) {
+          window.open(url, '_blank');
+        } else {
+          alert('Open your eyes Ha ha ha');
+        }
+      });
+    });
   </script>
+
 </body>
 
 </html>
