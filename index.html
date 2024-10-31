@@ -21,12 +21,6 @@
       background-color: lightblue;
     }
 
-    /* Desktop (Windows/macOS) styles */
-    body.desktop {
-      font-size: 24px;
-      background-color: lightgreen;
-    }
-
     /* iOS specific styles */
     body.ios {
       font-size: 16px;
@@ -133,7 +127,7 @@
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
       // Remove all classes
-      body.classList.remove('mobile', 'desktop', 'ios');
+      body.classList.remove('mobile', 'ios');
 
       // Check for iOS devices
       const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
@@ -144,14 +138,8 @@
       if (isIOS) {
         // Apply iOS styles
         body.classList.add('ios');
-      } else if (isAndroid) {
-        // Force mobile styles even if the browser requests desktop mode
-        body.classList.add('mobile');
-      } else if (width >= 768) {
-        // Apply desktop styles for Windows/macOS when viewport is large
-        body.classList.add('desktop');
-      } else {
-        // Fallback to mobile styles
+      } else if (isAndroid || width < 768) {
+        // Apply mobile styles for Android or small viewports
         body.classList.add('mobile');
       }
     }
