@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ashik Muhammed 🧞‍♂️</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
   <style>
     /* Base styles */
     body {
@@ -16,7 +19,7 @@
       font-size: 16px;
     }
 
-    /* Navbar styling */
+    /* Navbar styling for all devices */
     .navbar-brand {
       font-weight: 600;
     }
@@ -85,34 +88,32 @@
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script for Device Detection and Browser Information -->
+  <!-- Script for Device Detection and Styling -->
   <script>
-    function detectDeviceAndBrowser() {
+    function detectDeviceAndApplyStyles() {
       const width = window.innerWidth;
-      const height = window.innerHeight;
-      const userAgent = navigator.userAgent;
+      const body = document.body;
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      let browserName = "Unknown Browser";
-      let isMobile = /Mobile|Android/i.test(userAgent);
-      
-      if (userAgent.indexOf("Chrome") > -1) {
-        browserName = "Google Chrome";
-      } else if (userAgent.indexOf("Firefox") > -1) {
-        browserName = "Mozilla Firefox";
-      } else if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") === -1) {
-        browserName = "Safari";
-      } else if (userAgent.indexOf("Edge") > -1) {
-        browserName = "Microsoft Edge";
+      // Remove all classes
+      body.classList.remove('mobile', 'ios');
+
+      // Check for mobile devices (Android/iOS)
+      const isMobile = /android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
+      // Apply universal style
+      if (isMobile || width < 768) {
+        body.style.backgroundColor = '#e9f7fd';  // A different background color for small screens
+      } else {
+        body.style.backgroundColor = '#f8f9fa';  // Default background color for larger screens
       }
-
-      alert(`Browser: ${browserName}\nScreen Resolution: ${width}x${height}\nMobile Device: ${isMobile}`);
     }
 
     // Run on page load
-    detectDeviceAndBrowser();
+    detectDeviceAndApplyStyles();
 
     // Re-run on window resize
-    window.addEventListener('resize', detectDeviceAndBrowser);
+    window.addEventListener('resize', detectDeviceAndApplyStyles);
   </script>
 
 </body>
