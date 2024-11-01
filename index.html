@@ -13,37 +13,12 @@
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f8f9fa;
-    }
-
-    /* Mobile specific styles */
-    body.mobile {
       font-size: 16px;
-      background-color: lightblue;
     }
 
-    /* iOS specific styles */
-    body.ios {
-      font-size: 16px;
-      background-color: lightcoral;
-    }
-
-    /* Navbar styling for all devices */
+    /* Navbar styling */
     .navbar-brand {
       font-weight: 600;
-    }
-
-    /* Footer styling */
-    .footer-icons {
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .footer-icons img {
-      width: 30px;
-      height: 30px;
-      margin: 0 10px;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -107,72 +82,37 @@
     </div>
   </section>
 
-  <!-- Footer with Social Icons -->
-  <footer>
-    <div class="footer-icons">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" id="linkedin">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" id="instagram">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" id="twitter">
-    </div>
-  </footer>
-
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script for Device Detection and Styling -->
+  <!-- Script for Device Detection and Browser Information -->
   <script>
-    function detectDeviceAndApplyStyles() {
+    function detectDeviceAndBrowser() {
       const width = window.innerWidth;
-      const body = document.body;
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const height = window.innerHeight;
+      const userAgent = navigator.userAgent;
 
-      // Remove all classes
-      body.classList.remove('mobile', 'ios');
-
-      // Check for iOS devices
-      const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-
-      // Check for Android devices
-      const isAndroid = /android/i.test(userAgent);
-
-      if (isIOS) {
-        // Apply iOS styles
-        body.classList.add('ios');
-      } else if (isAndroid || width < 768) {
-        // Apply mobile styles for Android or small viewports
-        body.classList.add('mobile');
+      let browserName = "Unknown Browser";
+      let isMobile = /Mobile|Android/i.test(userAgent);
+      
+      if (userAgent.indexOf("Chrome") > -1) {
+        browserName = "Google Chrome";
+      } else if (userAgent.indexOf("Firefox") > -1) {
+        browserName = "Mozilla Firefox";
+      } else if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") === -1) {
+        browserName = "Safari";
+      } else if (userAgent.indexOf("Edge") > -1) {
+        browserName = "Microsoft Edge";
       }
+
+      alert(`Browser: ${browserName}\nScreen Resolution: ${width}x${height}\nMobile Device: ${isMobile}`);
     }
 
     // Run on page load
-    detectDeviceAndApplyStyles();
+    detectDeviceAndBrowser();
 
     // Re-run on window resize
-    window.addEventListener('resize', detectDeviceAndApplyStyles);
-
-    // Script for checking social media links
-    const socialMediaIcons = document.querySelectorAll('.footer-icons img');
-
-    socialMediaIcons.forEach(icon => {
-      icon.addEventListener('click', (event) => {
-        const id = event.target.id;
-        let url = '';
-
-        if (id === 'linkedin') {
-          url = 'https://www.linkedin.com/in/ashikmuhammed';
-        } else if (id === 'instagram') {
-          url = ''; // No link available
-        } else if (id === 'twitter') {
-          url = ''; // No link available
-        }
-
-        if (url) {
-          window.open(url, '_blank');
-        } else {
-          alert('Open your eyes Ha ha ha');
-        }
-      });
-    });
+    window.addEventListener('resize', detectDeviceAndBrowser);
   </script>
 
 </body>
