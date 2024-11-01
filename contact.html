@@ -60,6 +60,24 @@
             <input type="text" class="form-control" id="captcha" placeholder="Solve the math" required>
             <label for="captcha">What is <span id="num1"></span> + <span id="num2"></span>?</label>
           </div>
+          
+          <!-- Subject Dropdown -->
+          <div class="form-floating mb-3">
+            <select class="form-select" id="subject" aria-label="Subject" required>
+              <option value="For Doing a paid project">For Doing a Paid Project</option>
+              <option value="Request for Collaboration">Request for Collaboration</option>
+              <option value="Inquiry about Services">Inquiry about Services</option>
+              <option value="Other">Other</option>
+            </select>
+            <label for="subject">Subject</label>
+          </div>
+
+          <!-- Custom Subject Field (Hidden by Default) -->
+          <div class="form-floating mb-3" id="custom-subject-container" style="display:none;">
+            <input type="text" class="form-control" id="custom-subject" placeholder="Enter your subject">
+            <label for="custom-subject">Custom Subject</label>
+          </div>
+
           <div class="d-grid">
             <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
           </div>
@@ -88,6 +106,17 @@
     // Store the correct CAPTCHA answer
     let correctCaptcha = generateCaptcha();
 
+    // Show/hide custom subject input based on selection
+    document.getElementById('subject').addEventListener('change', function() {
+      const subject = this.value;
+      const customSubjectContainer = document.getElementById('custom-subject-container');
+      if (subject === 'Other') {
+        customSubjectContainer.style.display = 'block';
+      } else {
+        customSubjectContainer.style.display = 'none';
+      }
+    });
+
     // Handle form submission
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -97,9 +126,15 @@
       const message = document.getElementById('message').value;
       const userCaptcha = parseInt(document.getElementById('captcha').value, 10);
 
+      // Get the selected subject or custom subject
+      let subject = document.getElementById('subject').value;
+      if (subject === 'Other') {
+        subject = document.getElementById('custom-subject').value || 'No subject provided';
+      }
+
       // Validate the CAPTCHA
       if (userCaptcha === correctCaptcha) {
-        window.open(`mailto:x.genie.ib@gmail.com?subject=For Doing a paid project ${name}&body=Email: ${email}%0D%0A%0D%0A${message}`);
+        window.open(`mailto:x.genie.ib@gmail.com?subject=${encodeURIComponent(subject)}&body=Email: ${email}%0D%0A%0D%0A${message}`);
         document.getElementById('error-message').style.display = 'none';
       } else {
         document.getElementById('error-message').style.display = 'block';
