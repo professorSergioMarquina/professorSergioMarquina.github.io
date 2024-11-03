@@ -8,7 +8,6 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
 
   <style>
     /* Base styles */
@@ -18,7 +17,7 @@
       font-size: 16px;
     }
 
-    /* Navbar styling for all devices */
+    /* Navbar styling */
     .navbar-brand {
       font-weight: 600;
     }
@@ -39,13 +38,6 @@
 
     ul {
       text-align: left;
-    }
-
-    /* Responsive tweaks */
-    @media (min-width: 768px) {
-      #my-info .col-md-6 {
-        margin-top: 20px;
-      }
     }
   </style>
 </head>
@@ -114,34 +106,6 @@
 
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script for Device Detection and Styling -->
-  <script>
-    function detectDeviceAndApplyStyles() {
-      const width = window.innerWidth;
-      const body = document.body;
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-      // Remove all classes
-      body.classList.remove('mobile', 'ios');
-
-      // Check for mobile devices (Android/iOS)
-      const isMobile = /android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-
-      // Apply universal style
-      if (isMobile || width < 768) {
-        body.style.backgroundColor = '#e9f7fd';  // A different background color for small screens
-      } else {
-        body.style.backgroundColor = '#f8f9fa';  // Default background color for larger screens
-      }
-    }
-
-    // Run on page load
-    detectDeviceAndApplyStyles();
-
-    // Re-run on window resize
-    window.addEventListener('resize', detectDeviceAndApplyStyles);
-  </script>
 
 </body>
 
