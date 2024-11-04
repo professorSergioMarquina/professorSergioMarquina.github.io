@@ -15,11 +15,15 @@
       font-family: 'Poppins', sans-serif;
       background-color: #f8f9fa;
       font-size: 16px;
+      margin: 0; /* Ensure no margin on body */
     }
 
     /* Navbar styling */
-    .navbar-brand {
-      font-weight: 600;
+    .navbar {
+      position: fixed; /* Keeps the navbar fixed at the top */
+      top: 0;
+      width: 100%; /* Make sure it spans the entire width */
+      z-index: 1030; /* Ensure it appears above other content */
     }
 
     /* Card Styles */
@@ -39,6 +43,11 @@
     ul {
       text-align: left;
     }
+
+    /* Add padding to the top of the body to avoid content hiding under the navbar */
+    .main-content {
+      padding-top: 80px; /* Adjust based on navbar height */
+    }
   </style>
 </head>
 
@@ -46,7 +55,7 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand" href="#">Ashik Muhammed</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -71,8 +80,8 @@
     </div>
   </nav>
 
-  <!-- Info and Skills combined -->
-  <div class="container my-5">
+  <!-- Main Content -->
+  <div class="container my-5 main-content">
     <div class="row text-center">
       <div class="col">
         <h1 class="display-4">Ashik Muhammed</h1>
