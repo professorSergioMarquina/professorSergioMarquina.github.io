@@ -31,8 +31,16 @@
       padding-top: 80px;
     }
 
-    /* Paragraph styling for 'About Me' and 'Skills' sections */
-    .content-section {
+    /* Image styling */
+    .profile-image {
+      max-width: 200px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .education-section, .professional-education-section {
       margin-bottom: 20px;
       padding: 15px;
       background-color: #fff;
@@ -40,9 +48,23 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
+    .education-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .education-row div {
+      width: 48%;
+    }
+
+    .social-media-dropdown {
+      margin-top: 30px;
+    }
+
     h5 {
       color: #007bff;
     }
+
   </style>
 </head>
 
@@ -76,28 +98,66 @@
   </nav>
 
   <!-- Main Content -->
-  <div class="container my-5 main-content">
-    <div class="row text-center">
-      <div class="col">
-        <h1 class="display-4">Ashik Muhammed</h1>
-        <p>Graphics Designer || Tech Enthusiast</p>
+  <div class="container my-5 main-content text-center">
+    
+    <!-- Profile Image -->
+    <img src="profile-image-placeholder.jpg" alt="Ashik Muhammed" class="profile-image">
+    <!-- Placeholder for your image -->
+
+    <!-- Name -->
+    <h1 class="display-4">Ashik Muhammed</h1>
+    <p>Graphics Designer || Tech Enthusiast</p>
+
+    <!-- Education Section -->
+    <div class="education-section">
+      <h5>Education</h5>
+      <div class="education-row">
+        <div>
+          <p><strong>Course:</strong> Bachelor of Computer Applications</p>
+          <p><strong>Institution:</strong> XYZ University</p>
+        </div>
+        <div>
+          <p><strong>Years:</strong> 2019 - 2022</p>
+        </div>
+      </div>
+      <div class="education-row">
+        <div>
+          <p><strong>Course:</strong> High School</p>
+          <p><strong>Institution:</strong> ABC School</p>
+        </div>
+        <div>
+          <p><strong>Years:</strong> 2016 - 2018</p>
+        </div>
       </div>
     </div>
 
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <div class="content-section">
-          <h5>About Me</h5>
-          <p>Hello! I'm Ashik Muhammed, a passionate graphic designer and tech enthusiast. I specialize in creating visually captivating designs with a strong focus on user experience.</p>
+    <!-- Professional Education Section -->
+    <div class="professional-education-section">
+      <h5>Professional Education</h5>
+      <div class="education-row">
+        <div>
+          <p><strong>Course:</strong> Certification in Graphic Design</p>
+          <p><strong>Institution:</strong> Design Academy</p>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="content-section">
-          <h5>Skills</h5>
-          <p>I'm skilled in using tools like Photoshop, Illustrator, and in areas such as web development and content creation. I continually strive to expand my knowledge and stay updated with the latest trends in design and technology.</p>
+        <div>
+          <p><strong>Years:</strong> 2020 - 2021</p>
         </div>
       </div>
     </div>
+
+    <!-- Social Media Section -->
+    <div class="social-media-dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="socialDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        Connect me with Social Media
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="socialDropdown">
+        <li><a class="dropdown-item" href="https://github.com/yourprofile" target="_blank">GitHub</a></li>
+        <li><a class="dropdown-item" href="https://gitlab.com/yourprofile" target="_blank">GitLab</a></li>
+        <li><a class="dropdown-item" href="https://t.me/yourprofile" target="_blank">Telegram</a></li>
+        <li><a class="dropdown-item" href="https://instagram.com/yourprofile" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+
   </div>
 
   <!-- Bootstrap JavaScript -->
