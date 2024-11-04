@@ -7,27 +7,28 @@
   <title>Portfolio - Contact</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
+    /* Base styles */
     body {
-      background-color: #f9f9f9;
       font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      font-size: 16px;
+      margin: 0;
+      padding-top: 80px; /* Avoid content hiding under the navbar */
     }
 
+    /* Navbar styling */
     .navbar {
-      background-color: #ffffff; /* Changed to white */
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
     }
 
-    .navbar-brand,
-    .nav-link {
-      color: #007bff !important; /* Changed text color for better visibility */
-    }
-
-    .navbar-toggler-icon {
-      background-color: #007bff; /* Changed toggle icon color to match text */
-    }
-
-    h1.display-4 {
-      color: #007bff;
+    /* Contact Section styling */
+    .contact-section {
+      margin-top: 80px; /* Adjust for fixed navbar */
     }
 
     .form-floating label {
@@ -62,11 +63,10 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">My Portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">Ashik Muhammed</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -89,7 +89,7 @@
   </nav>
 
   <!-- Contact Section -->
-  <section id="contact" class="container my-5">
+  <section id="contact" class="container contact-section my-5">
     <div class="row">
       <div class="col-12 text-center">
         <h1 class="display-4">Contact Me</h1>
@@ -97,7 +97,7 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-8">
         <form id="contact-form">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="name" placeholder="Your Name" required>
@@ -119,6 +119,7 @@
           <!-- Subject Dropdown -->
           <div class="form-floating mb-3">
             <select class="form-select" id="subject" aria-label="Subject" required>
+              <option value="" disabled selected>Select a subject</option>
               <option value="For Doing a Paid Project">For Doing a Paid Project</option>
               <option value="Request for Collaboration">Request for Collaboration</option>
               <option value="Inquiry about Services">Inquiry about Services</option>
@@ -184,8 +185,11 @@
 
       // Validate the CAPTCHA
       if (userCaptcha === correctCaptcha) {
-        window.open(`mailto:x.genie.ib@gmail.com?subject=${encodeURIComponent(subject)}&body=Email: ${email}%0D%0A%0D%0A${message}`);
+        const mailtoLink = `mailto:x.genie.ib@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
+        window.open(mailtoLink);
         document.getElementById('error-message').style.display = 'none';
+        this.reset(); // Reset the form after successful submission
+        correctCaptcha = generateCaptcha(); // Regenerate CAPTCHA
       } else {
         document.getElementById('error-message').style.display = 'block';
         correctCaptcha = generateCaptcha(); // Regenerate CAPTCHA on failure
