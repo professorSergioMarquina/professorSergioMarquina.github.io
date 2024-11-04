@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,15 +14,16 @@
     }
 
     .navbar {
-      background-color: #007bff;
+      background-color: #ffffff; /* Changed to white */
     }
 
-    .navbar-brand, .nav-link {
-      color: #ffffff !important;
+    .navbar-brand,
+    .nav-link {
+      color: #007bff !important; /* Changed text color for better visibility */
     }
 
     .navbar-toggler-icon {
-      background-color: #ffffff;
+      background-color: #007bff; /* Changed toggle icon color to match text */
     }
 
     h1.display-4 {
@@ -46,7 +48,8 @@
       color: #ffffff;
     }
 
-    .form-select, .form-control {
+    .form-select,
+    .form-control {
       border-radius: 0.25rem;
     }
 
@@ -55,13 +58,15 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">My Portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -152,7 +157,7 @@
     let correctCaptcha = generateCaptcha();
 
     // Show/hide custom subject input based on selection
-    document.getElementById('subject').addEventListener('change', function() {
+    document.getElementById('subject').addEventListener('change', function () {
       const subject = this.value;
       const customSubjectContainer = document.getElementById('custom-subject-container');
       if (subject === 'Other') {
@@ -163,7 +168,7 @@
     });
 
     // Handle form submission
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
       e.preventDefault();
 
       const name = document.getElementById('name').value;
@@ -188,4 +193,5 @@
     });
   </script>
 </body>
+
 </html>
