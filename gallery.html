@@ -27,6 +27,14 @@
         background-color: #f8f9fa;
         margin: 0;
       }
+
+      /* Add this CSS to ensure all images have the same width and height */
+.gallery-image {
+  width: 100%;   /* Set width to 100% of the parent container */
+  height: 300px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures image scales without distortion, cropping the excess */
+}
+
     </style>
   </head>
   <body>
