@@ -29,17 +29,28 @@
         margin: 0;
       }
 
-      /* Add this CSS to ensure all images have the same width and height */
-      .gallery-image {
-        width: 100%;
-        height: 300px; /* Fixed height for all images */
-        object-fit: cover; /* Ensures image scales without distortion, cropping the excess */
-        max-width: 100%; /* Ensure images don't exceed their container width */
+      /* Parent container with a fixed height */
+      .gallery-item {
+        height: 40vh; /* Parent container height (e.g., 40% of the viewport height) */
+        margin-bottom: 30px; /* Space between items */
+        position: relative;
       }
 
-      /* Add spacing between gallery items */
-      .gallery-item {
-        margin-bottom: 30px; /* Space between items */
+      /* Ensure all images have the same responsive width and height */
+      .gallery-image {
+        width: 100%;
+        height: 100%; /* Full height of the parent container */
+        object-fit: cover; /* Ensures image scales without distortion, cropping the excess */
+        max-width: 100%; /* Ensure images don't exceed their container width */
+        position: absolute; /* Make sure it covers the entire container */
+        top: 0;
+        left: 0;
+      }
+
+      /* Text content inside each gallery item */
+      .gallery-item .mt-3 {
+        position: relative;
+        z-index: 1;
       }
     </style>
   </head>
