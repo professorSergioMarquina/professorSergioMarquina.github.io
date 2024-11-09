@@ -19,7 +19,7 @@
       /* Add padding to the top of the body to avoid content hiding under the navbar */
       .main-content {
         padding-top: 80px;
-        padding-bottom: 40px; /* Add bottom padding */
+        padding-bottom: 40px;
       }
 
       /* General body styling */
@@ -31,18 +31,17 @@
 
       /* Parent container with a fixed height */
       .gallery-item {
-        height: 40vh; /* Parent container height (e.g., 40% of the viewport height) */
-        margin-bottom: 30px; /* Space between items */
+        height: 40vh;
+        margin-bottom: 30px;
         position: relative;
       }
 
       /* Ensure all images have the same responsive width and height */
       .gallery-image {
         width: 100%;
-        height: 100%; /* Full height of the parent container */
-        object-fit: cover; /* Ensures image scales without distortion, cropping the excess */
-        max-width: 100%; /* Ensure images don't exceed their container width */
-        position: absolute; /* Make sure it covers the entire container */
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
         top: 0;
         left: 0;
       }
@@ -51,6 +50,9 @@
       .gallery-item .mt-3 {
         position: relative;
         z-index: 1;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -93,72 +95,6 @@
       <div class="row">
         <!-- Gallery Item 1 -->
         <div class="col-md-6 col-lg-4 gallery-item">
-          <img src="works/card.jpg" alt="Test-1" class="img-fluid gallery-image">
+          <img src="works/card.jpg" alt="Business Card Design" class="img-fluid gallery-image">
           <div class="mt-3">
-            <h5>Business Card Design</h5>
-            <p>Created a modern, clean business card design for a corporate client.</p>
-            <small>Last edited on: <span id="postDate1"></span></small>
-          </div>
-        </div>
-
-        <!-- Gallery Item 2 -->
-        <div class="col-md-6 col-lg-4 gallery-item">
-          <img src="works/BookTalkOct.jpeg" alt="Test-2" class="img-fluid gallery-image">
-          <div class="mt-3">
-            <h5>Poster Design</h5>
-            <p>Created a poster in 1080p width and height for Chinmaya College’s BA English Department's October Book Talk.</p>
-            <small>Last edited on: <span id="postDate2"></span></small>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Another Section with Two More Works -->
-    <section id="gallery2" class="container my-5 main-content">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h1 class="display-4">More Creative Works</h1>
-          <p>Here are more examples of my design projects.</p>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Gallery Item 3 -->
-        <div class="col-md-6 col-lg-4 gallery-item">
-          <img src="works/logoDesign.jpg" alt="Test-3" class="img-fluid gallery-image">
-          <div class="mt-3">
-            <h5>Logo Design</h5>
-            <p>Developed a professional and minimalist logo for a startup.</p>
-            <small>Last edited on: <span id="postDate3"></span></small>
-          </div>
-        </div>
-
-        <!-- Gallery Item 4 -->
-        <div class="col-md-6 col-lg-4 gallery-item">
-          <img src="works/brochureDesign.jpg" alt="Test-4" class="img-fluid gallery-image">
-          <div class="mt-3">
-            <h5>Brochure Design</h5>
-            <p>Designed an informative and visually engaging brochure for a corporate client.</p>
-            <small>Last edited on: <span id="postDate4"></span></small>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- JavaScript to fetch and update the post/edit date dynamically -->
-    <script>
-      // Function to format the date
-      function formatDate(date) {
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return date.toLocaleDateString(undefined, options);
-      }
-
-      // Get the last modified date of the document
-      const lastModified = new Date(document.lastModified);
-
-      // Set the formatted date to the first gallery item
-      document.getElementById('postDate1').innerText = formatDate(lastModified);
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+            <h5>Busine
