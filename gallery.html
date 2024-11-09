@@ -14,50 +14,59 @@
     top: 0;
     width: 100%;
     z-index: 1030;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the navbar */
+    background-color: #343a40; /* Darker navbar background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  /* Add padding to the top of the body to avoid content hiding under the navbar */
+  /* Navbar links */
+  .navbar .navbar-nav .nav-link {
+    color: #ffffff; /* White links */
+    font-weight: 500;
+    padding: 10px 15px;
+  }
+
+  .navbar .navbar-nav .nav-link:hover {
+    color: #ffc107; /* Golden highlight on hover */
+  }
+
+  /* Body and content padding */
   .main-content {
-    padding-top: 100px; /* More space for better visibility */
+    padding-top: 100px;
     padding-bottom: 40px;
+    background-color: #f4f4f9; /* Light background color for contrast */
   }
 
-  /* General body styling */
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-  }
-
-  /* Gallery section padding */
+  /* Gallery section spacing */
   #gallery, #gallery2 {
     margin-bottom: 60px;
   }
 
-  /* Gallery Title */
+  /* Gallery title */
   h1.display-4 {
     font-weight: 600;
-    color: #333;
+    color: #212529; /* Dark text for titles */
     margin-bottom: 20px;
   }
 
-  /* Parent container with a fixed height */
+  /* Gallery item container */
   .gallery-item {
-    height: 300px; /* Set a fixed height for uniformity */
+    height: 300px;
     margin-bottom: 30px;
     position: relative;
-    border-radius: 10px; /* Add rounded corners */
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card-like feel */
-    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #ffffff; /* White background for a clean look */
   }
 
+  /* Hover effect on gallery items */
   .gallery-item:hover {
-    transform: translateY(-10px); /* Lift the card slightly on hover */
+    transform: translateY(-10px);
+    background-color: #f8f9fa; /* Slight color change on hover */
   }
 
-  /* Ensure all images have the same responsive width and height */
+  /* Gallery image handling */
   .gallery-image {
     width: 100%;
     height: 100%;
@@ -66,32 +75,45 @@
   }
 
   .gallery-item:hover .gallery-image {
-    opacity: 0.9; /* Slightly dim the image on hover */
+    opacity: 0.9; /* Subtle dimming on hover */
   }
 
-  /* Text content inside each gallery item */
+  /* Text content inside gallery items */
   .gallery-item .mt-3 {
     position: absolute;
-    bottom: 10px; /* Align text to the bottom */
+    bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text */
-    color: #fff; /* White text for contrast */
+    background-color: rgba(52, 58, 64, 0.8); /* Dark semi-transparent background */
+    color: #ffffff; /* White text for contrast */
     padding: 10px;
     font-size: 16px;
-    text-align: center; /* Center align text */
+    text-align: center;
   }
 
-  /* Responsive fixes */
+  /* Hover effect for text content */
+  .gallery-item:hover .mt-3 {
+    background-color: rgba(52, 58, 64, 0.9); /* Slightly darker on hover */
+  }
+
+  /* Responsive adjustments */
   @media (max-width: 767.98px) {
     .gallery-item {
-      height: 250px; /* Reduce height on small screens */
+      height: 250px;
     }
 
     .gallery-item .mt-3 {
       font-size: 14px;
       padding: 8px;
     }
+  }
+
+  /* Footer padding for aesthetics */
+  footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #343a40;
+    color: #ffffff;
   }
 </style>
 
