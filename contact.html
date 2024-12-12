@@ -185,7 +185,7 @@
 
       // Validate the CAPTCHA
       if (userCaptcha === correctCaptcha) {
-        const mailtoLink = `mailto:x.genie.ib@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
+        const mailtoLink = `mailto:ashikmuhammed@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
         window.open(mailtoLink);
         document.getElementById('error-message').style.display = 'none';
         this.reset(); // Reset the form after successful submission
